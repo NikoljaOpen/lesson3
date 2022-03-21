@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace lesson3.pages
+{
+    /// <summary>
+    /// Логика взаимодействия для firstPagexaml.xaml
+    /// </summary>
+    public partial class firstPagexaml : Page
+    {
+        public firstPagexaml()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new quadrPage());
+            ((MainWindow)Application.Current.MainWindow).HeaderLabel.Content = "Квадратное уравнение";
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new linPage());
+            ((MainWindow)Application.Current.MainWindow).HeaderLabel.Content = "Линейное уравнение";
+        }
+    }
+}
